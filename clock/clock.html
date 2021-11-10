@@ -7,16 +7,12 @@
 }
 body{
   text-align: center;
-  color: var(--clockcolor);
   background-color: #000000;
   font-family: desg7;
 }
 .hiddenText{
   color: #000000;
   font-size: 1px;
-}
-#txt{
-  font-size: var(--clocksize);
 }
 </style>
 <script>
@@ -36,7 +32,7 @@ function getUrlParam(parameter, defaultvalue){
 }
 
 var cs = getUrlParam('size','4');
-document.documentElement.style.setProperty('--clocksize', cs*200 + "%");
+document.documentElement.style.fontSize = cs*200 + "%";
 
 var enableColon = getUrlParam('colon','true');
 if (enableColon == 'true'){
@@ -53,8 +49,8 @@ if (enableDot == 'true'){
 }
 
 var cc = getUrlParam('color','0');
-var arcc = ['ff0000', '00ff00', 'ffff00', 'ffffff', 'd1232a', '40ae49', '00aeef', 'fbcb0b'];	// Red, Green, Yellow, White, (Masterclock) Red, (Masterclock) Green, (Masterclock) Blue, (Masterclock) Amber
-document.documentElement.style.setProperty('--clockcolor', arcc[cc]);
+var arcc = ['ff0000', '00ff00', 'ffff00', 'ffffff', 'd1232a', '40ae49', '00aeef', 'fbcb0b', 'ffa500'];	// Red, Green, Yellow, White, (Masterclock) Red, (Masterclock) Green, (Masterclock) Blue, (Masterclock) Amber
+document.documentElement.style.color = arcc[cc];
 
 function startTime() {
   var today = new Date();
