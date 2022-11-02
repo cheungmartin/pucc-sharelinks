@@ -19,17 +19,22 @@ table {
 td {
   border: 1px solid black;
   padding: 5px 20px;
+  text-align: center;
 }
 
 #selectcolor > option{
   background-color: black;
 }
 
-button{
+button, .settings, input[type="text"]{
   background-color: black;
   color: red;
   font-family: desg14;
-  font-size: 500%
+  font-size: 400%
+}
+
+input[type="text"]{
+  text-align: center;
 }
 </style>
 </head>
@@ -64,6 +69,15 @@ button{
 	<option value="7" style="color: fbcb0b">(Masterclock) AMBER</option>
 	<option value="8" style="color: ffa500">ORANGE</option>
 </select></td>
-</tr></table>
-<button onclick="window.open('clock.html?size=' + document.getElementById('selectsize').value + '&colon=' + document.getElementById('selectcolon').checked + '&dot=' + document.getElementById('selectdot').checked + '&color=' + document.getElementById('selectcolor').value,'window','toolbar=no,menubar=no,resizable=yes,width=1400,height=380');">Open!Clock</button>
+</tr></table><br>
+
+<table align="center" border="2">
+<tr><td><button onclick="window.open('clock.html?size=' + document.getElementById('selectsize').value + '&colon=' + document.getElementById('selectcolon').checked + '&dot=' + document.getElementById('selectdot').checked + '&color=' + document.getElementById('selectcolor').value,'window','toolbar=no,menubar=no,resizable=yes,width=1400,height=380');">Open!Clock</button></td>
+
+<td><button onclick="window.open('cntupdn.html?size=' + document.getElementById('selectsize').value + '&colon=' + document.getElementById('selectcolon').checked + '&dot=' + document.getElementById('selectdot').checked + '&color=' + document.getElementById('selectcolor').value,'window','toolbar=no,menubar=no,resizable=yes,width=1400,height=380');">Count!Up</button></td></tr>
+
+<tr><td><button onclick="window.open('cntto.html?size=' + document.getElementById('selectsize').value + '&colon=' + document.getElementById('selectcolon').checked + '&dot=' + document.getElementById('selectdot').checked + '&color=' + document.getElementById('selectcolor').value + '&h=' + document.getElementById('cnttoh').value + '&m=' + document.getElementById('cnttom').value + '&s=' + document.getElementById('cnttos').value + '&up=' + document.getElementById('toup').checked,'window','toolbar=no,menubar=no,resizable=yes,width=1400,height=380');">Count!TO</button><br><input type="text" id="cnttoh" value="24" size="2"><span class="settings">:</span><input type="text" id="cnttom" value="0" size="2"><span class="settings">:</span><input type="text" id="cnttos" value="0" size="2"><br>Bounce:<input type="checkbox" id="toup" checked/></td>
+
+<td><button onclick="window.open('cntupdn.html?size=' + document.getElementById('selectsize').value + '&colon=' + document.getElementById('selectcolon').checked + '&dot=' + document.getElementById('selectdot').checked + '&color=' + document.getElementById('selectcolor').value + '&dir=dn' + '&h=' + document.getElementById('cntdnh').value + '&m=' + document.getElementById('cntdnm').value + '&s=' + document.getElementById('cntdns').value,'window','toolbar=no,menubar=no,resizable=yes,width=1400,height=380');">Count!Down</button><br><input type="text" id="cntdnh" value="0" size="2"><span class="settings">:</span><input type="text" id="cntdnm" value="5" size="2"><span class="settings">:</span><input type="text" id="cntdns" value="0" size="2"></td></tr>
+</table>
 </html>
